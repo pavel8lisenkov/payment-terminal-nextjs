@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="icon" href="/_next/static/media/favicon.dd3e7b5f.ico" type="image/x-icon"/><title>Payment terminal</title><style>
+    #nprogress {
+      pointer-events: none;
+    }
+    #nprogress .bar {
+      background: #29D;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+    }
+    #nprogress .peg {
+      display: block;
+      position: absolute;
+      right: 0px;
+      width: 100px;
+      height: 100%;
+      box-shadow: 0 0 10px #29D, 0 0 5px #29D;
+      opacity: 1;
+      -webkit-transform: rotate(3deg) translate(0px, -4px);
+      -ms-transform: rotate(3deg) translate(0px, -4px);
+      transform: rotate(3deg) translate(0px, -4px);
+    }
+    #nprogress .spinner {
+      display: block;
+      position: fixed;
+      z-index: 1031;
+      top: 15px;
+      right: 15px;
+    }
+    #nprogress .spinner-icon {
+      width: 18px;
+      height: 18px;
+      box-sizing: border-box;
+      border: solid 2px transparent;
+      border-top-color: #29D;
+      border-left-color: #29D;
+      border-radius: 50%;
+      -webkit-animation: nprogresss-spinner 400ms linear infinite;
+      animation: nprogress-spinner 400ms linear infinite;
+    }
+    .nprogress-custom-parent {
+      overflow: hidden;
+      position: relative;
+    }
+    .nprogress-custom-parent #nprogress .spinner,
+    .nprogress-custom-parent #nprogress .bar {
+      position: absolute;
+    }
+    @-webkit-keyframes nprogress-spinner {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+    @keyframes nprogress-spinner {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style><meta name="next-head-count" content="6"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-f164db4954bac6ec.js" defer=""></script><script src="/_next/static/chunks/framework-2c79e2a64abdb08b.js" defer=""></script><script src="/_next/static/chunks/main-c128e75a87ac7c29.js" defer=""></script><script src="/_next/static/chunks/pages/_app-e10e2df1b3e88268.js" defer=""></script><script src="/_next/static/chunks/pages/operator/%5Bid%5D-e0c91a48dc4b8004.js" defer=""></script><script src="/_next/static/DYdtlMFolBsD_jsMO9tgI/_buildManifest.js" defer=""></script><script src="/_next/static/DYdtlMFolBsD_jsMO9tgI/_ssgManifest.js" defer=""></script><style data-styled="" data-styled-version="5.3.8">*{padding:0;margin:0;border:0;}/*!sc*/
+*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}/*!sc*/
+:focus,:active{outline:none;}/*!sc*/
+a:focus,a:active{outline:none;}/*!sc*/
+nav,footer,header,aside{display:block;}/*!sc*/
+html,body{width:100%;height:100%;line-height:1;font-family:'Comfortaa',cursive;font-style:normal;font-weight:700;font-size:16px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;-webkit-scroll-behavior:smooth;-moz-scroll-behavior:smooth;-ms-scroll-behavior:smooth;scroll-behavior:smooth;}/*!sc*/
+input,button,textarea{font-family:inherit;}/*!sc*/
+input::-ms-clear{display:none;}/*!sc*/
+button{cursor:pointer;}/*!sc*/
+button::-moz-focus-inner{padding:0;border:0;}/*!sc*/
+a,a:visited{-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+a:hover{-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+a{color:inherit;}/*!sc*/
+ul li{list-style:none;}/*!sc*/
+img{vertical-align:top;}/*!sc*/
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:400;}/*!sc*/
+data-styled.g1[id="sc-global-iWAilB1"]{content:"sc-global-iWAilB1,"}/*!sc*/
+.eQcqCT{max-width:1440px;min-height:100vh;padding:100px;margin:0px auto;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;gap:3em;overflow:hidden;}/*!sc*/
+data-styled.g2[id="sc-beySbM"]{content:"eQcqCT,"}/*!sc*/
+.erEdlh{font-weight:600;}/*!sc*/
+data-styled.g3[id="sc-guDLRT"]{content:"erEdlh,"}/*!sc*/
+.gnZWXq{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;gap:20px;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;}/*!sc*/
+data-styled.g4[id="sc-dmyDGi"]{content:"gnZWXq,"}/*!sc*/
+.XnXnr{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;gap:40px;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;padding:30px;border-radius:12px;background-color:white;width:500px;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}/*!sc*/
+.XnXnr div{font-size:18px;}/*!sc*/
+.XnXnr input{box-sizing:border-box;}/*!sc*/
+.XnXnr input::-webkit-input-placeholder{font-size:0.9rem;-webkit-transform:translateY(-.15rem);-ms-transform:translateY(-.15rem);transform:translateY(-.15rem);}/*!sc*/
+.XnXnr input:-moz-placeholder{font-size:0.9rem;-webkit-transform:translateY(-.15rem);-ms-transform:translateY(-.15rem);transform:translateY(-.15rem);}/*!sc*/
+.XnXnr input:-ms-input-placeholder{font-size:0.9rem;-webkit-transform:translateY(-.15rem);-ms-transform:translateY(-.15rem);transform:translateY(-.15rem);}/*!sc*/
+.XnXnr input[type="number"]::-webkit-outer-spin-button,.XnXnr input[type="number"]::-webkit-inner-spin-button{-webkit-appearance:none;}/*!sc*/
+.XnXnr input[type='number'],.XnXnr input[type="number"]:hover,.XnXnr input[type="number"]:focus{-webkit-appearance:none;-moz-appearance:none;appearance:none;-moz-appearance:textfield;}/*!sc*/
+.XnXnr input[type='number']::-webkit-inner-spin-button{display:none;}/*!sc*/
+data-styled.g5[id="sc-hLQRIN"]{content:"XnXnr,"}/*!sc*/
+.liOQZn{position:fixed;padding:20px;width:100%;height:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;background:rgba(0,0,0,0.4);-webkit-transition:0.3s;transition:0.3s;}/*!sc*/
+data-styled.g6[id="sc-eDLJxc"]{content:"liOQZn,"}/*!sc*/
+.gtDKVP{position:absolute;top:15px;right:15px;width:20px;height:20px;-webkit-transition:ease 0.5s;transition:ease 0.5s;}/*!sc*/
+.gtDKVP:hover{cursor:pointer;}/*!sc*/
+.gtDKVP::after,.gtDKVP::before{content:'';position:absolute;top:10px;display:block;width:20px;height:3px;background:#000;}/*!sc*/
+.gtDKVP::before{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);}/*!sc*/
+.gtDKVP::after{-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg);}/*!sc*/
+data-styled.g7[id="sc-jTQDnj"]{content:"gtDKVP,"}/*!sc*/
+.dybDnG{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-transition:.2s opacity ease-in-out;transition:.2s opacity ease-in-out;width:100%;}/*!sc*/
+data-styled.g8[id="sc-gLLvby"]{content:"dybDnG,"}/*!sc*/
+.ILzb{width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;gap:20px;text-align:center;-webkit-transition:.2s ease-in-out;transition:.2s ease-in-out;}/*!sc*/
+.ILzb:not(:last-child){margin-bottom:16px;}/*!sc*/
+data-styled.g9[id="sc-iBdmCd"]{content:"ILzb,"}/*!sc*/
+.iMZfvN{width:100%;height:48px;border:1px solid rgba(0,0,0,0.15);background-color:#edf8ff;border-radius:8px;text-align:center;color:#000000;font-size:24px;}/*!sc*/
+.iMZfvN:focus{border:1px solid #00aeef;outline:none;}/*!sc*/
+data-styled.g10[id="sc-fsYeqs"]{content:"iMZfvN,"}/*!sc*/
+.kzxLHM{width:100%;padding:13px;border-radius:8px;background:#00afefd5;font-size:18px;font-weight:400;color:#ffffff;-webkit-transition:.2s ease-in-out;transition:.2s ease-in-out;}/*!sc*/
+.kzxLHM:hover:not(:disabled){background:#00aeef;-webkit-box-shadow:0 0 5px #00aeef;-moz-box-shadow:0 0 5px #00aeef;box-shadow:0 0 5px #00aeef;}/*!sc*/
+.kzxLHM:active:not(:disabled){-webkit-transform:scale(0.96);-ms-transform:scale(0.96);transform:scale(0.96);}/*!sc*/
+.kzxLHM:disabled{background:rgba(0,0,0,0.4);}/*!sc*/
+data-styled.g11[id="sc-qZqnM"]{content:"kzxLHM,"}/*!sc*/
+</style><style data-href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;600;700&display=swap">@font-face{font-family:'Comfortaa';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/comfortaa/v40/1Pt_g8LJRfWJmhDAuUsSQamb1W0lwk4S4VrMPrc.woff) format('woff')}@font-face{font-family:'Comfortaa';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/comfortaa/v40/1Pt_g8LJRfWJmhDAuUsSQamb1W0lwk4S4bbLPrc.woff) format('woff')}@font-face{font-family:'Comfortaa';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/comfortaa/v40/1Pt_g8LJRfWJmhDAuUsSQamb1W0lwk4S4Y_LPrc.woff) format('woff')}@font-face{font-family:'Comfortaa';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/comfortaa/v40/1PtCg8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMXL830efAesmwYSFoxBEC_I28dnyMpxo.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Comfortaa';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/comfortaa/v40/1PtCg8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMXL830efAesmwYSFoxBEL_I28dnyMpxo.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Comfortaa';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/comfortaa/v40/1PtCg8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMXL830efAesmwYSFoxBEM_I28dnyMpxo.woff2) format('woff2');unicode-range:U+0370-03FF}@font-face{font-family:'Comfortaa';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/comfortaa/v40/1PtCg8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMXL830efAesmwYSFoxBEA_I28dnyMpxo.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Comfortaa';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/comfortaa/v40/1PtCg8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMXL830efAesmwYSFoxBEB_I28dnyMpxo.woff2) format('woff2');unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Comfortaa';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/comfortaa/v40/1PtCg8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMXL830efAesmwYSFoxBEP_I28dnyM.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Comfortaa';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/comfortaa/v40/1PtCg8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMXL830efAesmwYSFoxBEC_I28dnyMpxo.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Comfortaa';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/comfortaa/v40/1PtCg8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMXL830efAesmwYSFoxBEL_I28dnyMpxo.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Comfortaa';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/comfortaa/v40/1PtCg8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMXL830efAesmwYSFoxBEM_I28dnyMpxo.woff2) format('woff2');unicode-range:U+0370-03FF}@font-face{font-family:'Comfortaa';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/comfortaa/v40/1PtCg8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMXL830efAesmwYSFoxBEA_I28dnyMpxo.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Comfortaa';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/comfortaa/v40/1PtCg8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMXL830efAesmwYSFoxBEB_I28dnyMpxo.woff2) format('woff2');unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Comfortaa';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/comfortaa/v40/1PtCg8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMXL830efAesmwYSFoxBEP_I28dnyM.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Comfortaa';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/comfortaa/v40/1PtCg8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMXL830efAesmwYSFoxBEC_I28dnyMpxo.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Comfortaa';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/comfortaa/v40/1PtCg8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMXL830efAesmwYSFoxBEL_I28dnyMpxo.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Comfortaa';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/comfortaa/v40/1PtCg8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMXL830efAesmwYSFoxBEM_I28dnyMpxo.woff2) format('woff2');unicode-range:U+0370-03FF}@font-face{font-family:'Comfortaa';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/comfortaa/v40/1PtCg8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMXL830efAesmwYSFoxBEA_I28dnyMpxo.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Comfortaa';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/comfortaa/v40/1PtCg8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMXL830efAesmwYSFoxBEB_I28dnyMpxo.woff2) format('woff2');unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Comfortaa';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/comfortaa/v40/1PtCg8LJRfWJmhDAuUsSQamb1W0lwk4S4WjMXL830efAesmwYSFoxBEP_I28dnyM.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}</style></head><body><div id="__next"><div class="sc-beySbM eQcqCT"><div class="sc-eDLJxc liOQZn"><form action="" class="sc-hLQRIN XnXnr"><div class="sc-jTQDnj gtDKVP"></div><div class="sc-dmyDGi gnZWXq"><img src="https://raw.githubusercontent.com/pavel8lisenkov/payment-images/main/images/tele2.png" alt="Tele2" width="70" height="70"/><h2 class="sc-guDLRT erEdlh">Tele2</h2></div><div class="sc-gLLvby dybDnG"><div class="sc-iBdmCd ILzb"><label for="phone">Номер телефона</label><input id="phone" type="tel" placeholder="+7 (999)-999-99-99" required="" pattern="^((8|\+[1-9])[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{10}$" class="sc-fsYeqs iMZfvN" value=""/></div></div><div class="sc-gLLvby dybDnG"><div class="sc-iBdmCd ILzb"><label for="amount">Сумма в рублях</label><input id="amount" type="number" placeholder="Максимальная сумма 1000 ₽" required="" class="sc-fsYeqs iMZfvN" value=""/></div></div><button class="sc-qZqnM kzxLHM">Оплатить</button></form></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"operator":{"id":"3","name":"Tele2","image":"tele2.png"}},"__N_SSG":true},"page":"/operator/[id]","query":{"id":"3"},"buildId":"DYdtlMFolBsD_jsMO9tgI","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>
